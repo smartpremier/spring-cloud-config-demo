@@ -1,3 +1,3 @@
 example:
-  property: dev-property
-  message: dev-message
+  property: "dev-property"
+  message: "{cipher}a62c8c1d49671219bb6720bc39802999555fdacf88a6d243b6175d931ed81f76"
