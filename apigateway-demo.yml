@@ -1,9 +1,13 @@
+---
+spring:
+  profiles: default
 server:
   port: 8080
 
 spring:
   application:
     name: apigateway-demo
+
     
 ---
 spring:
