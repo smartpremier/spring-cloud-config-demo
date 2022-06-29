@@ -4,6 +4,15 @@ eureka:
   client:
     registerWithEureka: true
     fetchRegistry: true
-    
+    serviceUrl:
+      defaultZone: http://eureka-server-01:5070/eureka/,http://eureka-server-02:5070/eureka/
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
+          
 example:
   property: apigateway-dev-a-property
