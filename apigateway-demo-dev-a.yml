@@ -1,6 +1,3 @@
-spring:
-  profiles: dev-a
-
 eureka:
   instance:
     preferIpAddress: true
