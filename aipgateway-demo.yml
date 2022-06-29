@@ -1,0 +1,41 @@
+---
+spring:
+  profile: default
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    
+  example:
+    property: apigateway-default-property
+    
+---
+spring:
+  profile: dev-a
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    
+  example:
+    property: apigateway-dev-a-property
+    
+ ---
+spring:
+  profile: dev-b
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    
+  example:
+    property: apigateway-dev-b-property
