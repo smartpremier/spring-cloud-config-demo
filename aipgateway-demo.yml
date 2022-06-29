@@ -1,6 +1,5 @@
----
 spring:
-  profile: default
+  profiles: default
 
 eureka:
   instance:
@@ -14,7 +13,7 @@ eureka:
     
 ---
 spring:
-  profile: dev-a
+  profiles: dev-a
 
 eureka:
   instance:
@@ -28,7 +27,7 @@ eureka:
     
  ---
 spring:
-  profile: dev-b
+  profiles: dev-b
 
 eureka:
   instance:
