@@ -1,35 +1,5 @@
 ---
 example:
-  property: I AM DEFAULT
-  
-spring:
-  profiles: default
-  config:
-    import: optional:configserver:http://config-server:8070
-  application:
-    name: apigateway-demo
-    
-server:
-  port: 8080
-
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://localhost:5070/eureka/
-
-management:
-  endpoint:
-    web:
-      exposure:
-        include:
-          - "*"
-
----
-example:
   property: I AM DEV-A
 
 server:
@@ -38,9 +8,7 @@ server:
 spring:
   profiles: dev-a
   config:
-    import: optional:configserver:http://config-server:8070
-  application:
-    name: apigateway-demo    
+    import: optional:configserver:http://config-server:8070   
     
 eureka:
   instance:
@@ -50,7 +18,7 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://eureka-server-01:5070/eureka/,http://eureka-server-02:5070/eureka/
-
+      
 
 ---
 example:
@@ -60,8 +28,6 @@ server:
   port: 8070
   
 spring:
-  application:
-    name: apigateway-demo
   profiles: dev-b
   config:
     import: optional:configserver:http://config-server:8070
