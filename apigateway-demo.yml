@@ -8,8 +8,39 @@ spring:
   application:
     name: apigateway-demo
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:5070/eureka/
     
 ---
 spring:
+  profiles: dev-a
+server:
+  port: 8080
+
+spring:
   application:
     name: apigateway-demo
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server-01:5070/eureka/,http://eureka-server-02:5070/eureka/
+
+
+
+---
+spring:
+  profiles: dev-b
+server:
+  port: 8080
+
+spring:
+  application:
+    name: apigateway-demo
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server-03:5070/eureka/,http://eureka-server-04:5070/eureka/
