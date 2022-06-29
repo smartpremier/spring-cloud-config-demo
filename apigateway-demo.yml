@@ -1,7 +1,4 @@
 ---
-example:
-  property: I AM DEV-A
-
 spring:
   profiles: dev-a
   config:
@@ -16,11 +13,10 @@ eureka:
     serviceUrl:
       defaultZone: http://eureka-server-01:5070/eureka/,http://eureka-server-02:5070/eureka/
       
+example:
+  property: I AM DEV-A
 
 ---
-example:
-  property: I AM DEV-B
-  
 spring:
   profiles: dev-b
   config:
@@ -34,3 +30,6 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://eureka-server-03:5070/eureka/,http://eureka-server-04:5070/eureka/
+      
+example:
+  property: I AM DEV-B
