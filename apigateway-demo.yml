@@ -4,12 +4,13 @@ example:
   
 spring:
   profiles: default
-server:
-  port: 8080
-
-spring:
+  config:
+    import: optional:configserver:http://config-server:8070
   application:
     name: apigateway-demo
+    
+server:
+  port: 8080
 
 eureka:
   instance:
@@ -24,16 +25,17 @@ eureka:
 ---
 example:
   property: I AM DEV-A
-  
-spring:
-  profiles: dev-a
+
 server:
   port: 8080
 
 spring:
+  profiles: dev-a
+  config:
+    import: optional:configserver:http://config-server:8070
   application:
-    name: apigateway-demo
-
+    name: apigateway-demo    
+    
 eureka:
   instance:
     preferIpAddress: true
@@ -47,15 +49,16 @@ eureka:
 ---
 example:
   property: I AM DEV-B
-  
-spring:
-  profiles: dev-b
-server:
-  port: 8080
 
+server:
+  port: 8070
+  
 spring:
   application:
     name: apigateway-demo
+  profiles: dev-b
+  config:
+    import: optional:configserver:http://config-server:8070
 
 eureka:
   instance:
