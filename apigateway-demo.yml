@@ -1,4 +1,7 @@
 ---
+example:
+  property: I AM DEFAULT
+  
 spring:
   profiles: default
 server:
@@ -9,11 +12,19 @@ spring:
     name: apigateway-demo
 
 eureka:
+  instance:
+    preferIpAddress: true
   client:
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:5070/eureka/
     
+
 ---
+example:
+  property: I AM DEV-A
+  
 spring:
   profiles: dev-a
 server:
@@ -24,13 +35,19 @@ spring:
     name: apigateway-demo
 
 eureka:
+  instance:
+    preferIpAddress: true
   client:
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://eureka-server-01:5070/eureka/,http://eureka-server-02:5070/eureka/
 
 
-
 ---
+example:
+  property: I AM DEV-B
+  
 spring:
   profiles: dev-b
 server:
@@ -41,6 +58,10 @@ spring:
     name: apigateway-demo
 
 eureka:
+  instance:
+    preferIpAddress: true
   client:
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://eureka-server-03:5070/eureka/,http://eureka-server-04:5070/eureka/
