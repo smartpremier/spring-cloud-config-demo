@@ -20,7 +20,13 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:5070/eureka/
-    
+
+management:
+  endpoint:
+    web:
+      exposure:
+        include:
+          - "*"
 
 ---
 example:
