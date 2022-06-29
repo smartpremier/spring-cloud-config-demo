@@ -2,9 +2,6 @@
 example:
   property: I AM DEV-A
 
-server:
-  port: 8080
-
 spring:
   profiles: dev-a
   config:
@@ -23,9 +20,6 @@ eureka:
 ---
 example:
   property: I AM DEV-B
-
-server:
-  port: 8070
   
 spring:
   profiles: dev-b
